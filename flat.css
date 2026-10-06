@@ -1,0 +1,7 @@
+/* Колонки (список сессий, лента, панель справа, например «Треды») — до краёв окна, с прямыми углами и без
+   зазоров: между колонками вместо тёмной полосы фона — тонкая линия цвета рамок темы. */
+.app { padding: 0; column-gap: 0; }
+.app.left-folded { padding-left: 0; }
+main, .side { border-radius: 0; box-shadow: none; }
+main { border-left: 1px solid var(--border); }
+.side { border-left: 1px solid var(--border); }
