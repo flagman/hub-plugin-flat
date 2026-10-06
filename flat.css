@@ -6,10 +6,11 @@ main, .side { border-radius: 0; box-shadow: none; }
 main { border-left: 1px solid var(--border); }
 .side { border-left: 1px solid var(--border); }
 
-/* Прямые углы везде: плашки, кнопки, поле ввода, метки и счётчики. Круглыми остаются только кружки — точки статуса,
-   аватары, крутилка ожидания: там круг и есть знак. */
-:root { --radius: 0px; --radius-xs: 0px; --radius-sm: 0px; --radius-lg: 0px; --radius-xl: 0px; --radius-pill: 0px; }
-*:not([class*="dot"]):not(.account):not(.sw):not(.flow-legend i) { border-radius: 0 !important; }
+/* Внутри — мелкие скругления, как в Jira: каркас ровный, кнопки, поля и блоки — 4–8 px, метки и счётчики — почти
+   прямоугольные (3 px) вместо «таблеток», круглые — только точки статуса и аватары. */
+:root { --radius: 4px; --radius-xs: 3px; --radius-sm: 3px; --radius-lg: 6px; --radius-xl: 8px; --radius-pill: 3px; }
+.composer { border-radius: 6px; }
+.chip, .tag, .pill, .srow .count, .gcount, .wpill, .row.older .btn, .kbd-hint { border-radius: 3px; }
 .account { border-radius: 50%; }
 
 /* Рамки, которые только обводят: метки состояния в шапке, «ответ?» в списке, подсказки клавиш, сводка «Что дальше»
