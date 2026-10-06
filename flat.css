@@ -5,3 +5,16 @@
 main, .side { border-radius: 0; box-shadow: none; }
 main { border-left: 1px solid var(--border); }
 .side { border-left: 1px solid var(--border); }
+
+/* Прямые углы везде: плашки, кнопки, поле ввода, метки и счётчики. Круглыми остаются только кружки — точки статуса,
+   аватары, крутилка ожидания: там круг и есть знак. */
+:root { --radius: 0px; --radius-xs: 0px; --radius-sm: 0px; --radius-lg: 0px; --radius-xl: 0px; --radius-pill: 0px; }
+*:not([class*="dot"]):not(.account):not(.sw):not(.flow-legend i) { border-radius: 0 !important; }
+.account { border-radius: 50%; }
+
+/* Рамки, которые только обводят: метки состояния в шапке, «ответ?» в списке, подсказки клавиш, сводка «Что дальше»
+   и список задач в «Тредах», «Показать раньше». Рамки у того, что надо найти глазом или нажать (поле ввода, карточки
+   вопросов, кнопки, переключатель «Кратко / Подробно»), остаются. */
+.chip, .tag.soft, .kbd-hint, .row.older .btn, .pj-next, .pj-todos { border-color: transparent !important; }
+.pj-next, .pj-todos { background: transparent; padding-inline: 0; }
+.composer { box-shadow: none; }
